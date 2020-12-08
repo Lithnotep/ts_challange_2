@@ -1,5 +1,6 @@
 require 'socket'
 require_relative './lib/parser.rb'
+require_relative './lib/response.rb'
 
 
 server  = TCPServer.new('localhost', 8080)
