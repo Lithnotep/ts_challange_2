@@ -1,4 +1,5 @@
 require 'socket'
+require 'json'
 require_relative './lib/parser.rb'
 require_relative './lib/response.rb'
 

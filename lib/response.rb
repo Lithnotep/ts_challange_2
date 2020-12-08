@@ -21,6 +21,17 @@ SERVER_ROOT = "/ts_challenge_2/"
 end
 
 class Response
+    
+    def initialize(code, data: '')
+        @response = 
+        "HTTP/1.1 #{code}\r\n" +
+        "Content-type: application/json\r\n" +
+        "\r\n" +
+        "#{data}\r\n"
+    end
 
+    def send(client)
+        client.write(@responsee)
+    end
 end
 
