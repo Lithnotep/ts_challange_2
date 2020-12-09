@@ -5,4 +5,8 @@ class PeopleController
         people_data = PersonSerializer.new.people_serialize(people)
         {data: people_data}
     end
+
+    def show
+        
+    end
 end

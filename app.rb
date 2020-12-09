@@ -12,7 +12,7 @@ server  = TCPServer.new('localhost', 8080)
 
 loop {
   client  = server.accept
-  
+
   request = Parser.new.parse(client.read(2048))
   response = RoutePrep.new.route(request)
   response.send(client)
