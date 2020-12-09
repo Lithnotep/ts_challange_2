@@ -1,9 +1,12 @@
+
 class Parser
 
     def parse(request)
         method, path, version = request.lines[0].split
+        path_params = params(path)
         {
             path: path,
+            params: path_params
             method: method,
             headers: parse_header(request)
         }
@@ -19,6 +22,14 @@ class Parser
             headers[header] = value
             end
 
+    end
+
+    def params(path)
+        param = path.split("/")
+        {
+            last: param[2]
+            first: param[3]
+        }
     end
 
     def normalize(header)
