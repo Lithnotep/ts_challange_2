@@ -21,7 +21,6 @@ class Parser
             header = normalize(header)
             headers[header] = value
             end
-
     end
 
     def params(path)
@@ -35,5 +34,4 @@ class Parser
     def normalize(header)
         header.gsub(":", "").downcase.to_sym
     end
-
 end

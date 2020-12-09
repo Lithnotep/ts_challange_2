@@ -14,8 +14,6 @@ class RoutePrep
     def params(request)
         request.fetch(:params)
     end
-
-    
 end
 
 class Response

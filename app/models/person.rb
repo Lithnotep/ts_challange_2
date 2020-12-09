@@ -16,6 +16,5 @@ class Person
     ensure
         con.close if con
     end
-
     
 end
