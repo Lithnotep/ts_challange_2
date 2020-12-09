@@ -5,7 +5,7 @@ class RoutePrep
         if request.fetch(:path) == '/people'
             Response.new(200, PeopleController.new.index.to_s)
         elsif request.fetch(:path).include?('/person')
-            Response.new(200, PeopleController.new.show(params(request)).to_s)
+            Response.new(200, PeopleController.new.show(params(request)))
         else
             "Data not found"
         end
