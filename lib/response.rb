@@ -1,28 +1,22 @@
-class RespPrep
-    SERVER_ROOT = "/ts_challenge_2/"
 
-    def confirm_response(request)
+class RoutePrep
+
+    def route(request)
         if request.fetch(:path) == '/people'
-            #read from people controller method index
+            Response.new(200, PeopleController.new.index.to_s)
         elsif request.fetch(:path) == '/person'
             #read from people controller method index
         else
-            #respond with errors
+            send_file_not_found
         end
     end
 
-    def send_ok_response(data)
-        #responese with json data
-    end
-  
-    def send_file_not_found
-        #response with error code
-    end
+    
 end
 
 class Response
     
-    def initialize(code:, data: '')
+    def initialize(code, data)
         @response = 
         "HTTP/1.1 #{code}\r\n" +
         "Content-type: application/json\r\n" +
