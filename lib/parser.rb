@@ -6,7 +6,7 @@ class Parser
         path_params = params(path)
         {
             path: path,
-            params: path_params
+            params: path_params,
             method: method,
             headers: parse_header(request)
         }
@@ -27,7 +27,7 @@ class Parser
     def params(path)
         param = path.split("/")
         {
-            last: param[2]
+            last: param[2],
             first: param[3]
         }
     end

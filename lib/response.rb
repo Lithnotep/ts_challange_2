@@ -4,11 +4,15 @@ class RoutePrep
     def route(request)
         if request.fetch(:path) == '/people'
             Response.new(200, PeopleController.new.index.to_s)
-        elsif request.fetch(:path) == '/person'
-            #read from people controller method index
+        elsif request.fetch(:path).include?('/person')
+            Response.new(200, PeopleController.new.show(params(request)).to_s)
         else
             send_file_not_found
         end
+    end
+
+    def params(request)
+        request.fetch(:params)
     end
 
     

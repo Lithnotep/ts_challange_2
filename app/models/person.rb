@@ -4,8 +4,10 @@ class Person
         connect('SELECT * FROM People ORDER BY last ASC, first ASC;')
     end
 
-    def find
-        connect()
+    def find(params)
+        first = params[:first]
+        last = params[:last]
+        connect("SELECT * FROM People WHERE first = '#{first}' AND last = '#{last}';")
     end
 
     def connect(query)

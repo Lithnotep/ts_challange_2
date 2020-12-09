@@ -6,7 +6,9 @@ class PeopleController
         {data: people_data}
     end
 
-    def show
-        
+    def show(params)
+        person = Person.new.find(params)
+        person_data = PersonSerializer.new.person_serialize(person.first)
+        {data: person_data}
     end
 end
