@@ -7,7 +7,7 @@ class RoutePrep
         elsif request.fetch(:path).include?('/person')
             Response.new(200, PeopleController.new.show(params(request)).to_s)
         else
-            send_file_not_found
+            "Data not found"
         end
     end
 
