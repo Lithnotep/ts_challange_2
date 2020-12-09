@@ -19,5 +19,8 @@ loop {
   puts "Response Prepared"
   response.send(client)
   puts "Response sent"
+  sleep(5)
+  puts "closing client"
+  client.close
 }
 
