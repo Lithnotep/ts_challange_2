@@ -7,7 +7,7 @@ class Person
     def find(params)
         first = params[:first]
         last = params[:last]
-        connect("SELECT * FROM People WHERE first = '#{first}' AND last = '#{last}';")
+        connect("SELECT * FROM People WHERE first = '#{first.capitalize}' AND last = '#{last.capitalize}';")
     end
 
     def connect(query)
